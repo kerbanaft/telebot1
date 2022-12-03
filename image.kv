@@ -1,0 +1,36 @@
+#:import utils kivy.utils
+<Button>
+    size_hint:(0.5, 0.3)
+    font_size: 50
+<MyGridLayout>
+#    canvas.before:
+#        Color:
+#            rgba: utils.get_color_from_hex('#3b3b4a')
+#        Rectangle:
+#            pos:self.pos
+#            size:self.size
+    BoxLayout:
+        orientation:'vertical'
+        size: root.width, root.height
+
+        Label:
+            id: name_label
+            text: 'Напиши своё имя!'
+            font_size: 29
+        TextInput:
+            id: name_input
+            multiline: False
+            size_hint:(1, .5)
+            font_size: 50
+        Button:
+            text: 'Разместить'
+            size_hint:(1, .5)
+            font_size: 32
+            on_press: root.press()
+
+
+
+
+
+
+

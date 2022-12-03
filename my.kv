@@ -1,0 +1,67 @@
+#:import utils kivy.utils
+<Label>
+    background_color: (239/255, 150/255, 0, 1)
+    font_size:30
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    color: (1, 0, 0, 1)
+    bold: True
+    italic: True
+    outline_color:(1,1,1,1)
+    outline_color:(1,1,0,1)
+    outline_width:2
+
+<MyGridLayout>
+
+
+    BoxLayout:
+        orientation:('vertical')
+        size: root.width, root.height
+
+        padding:10
+        spacing:10
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Имя"
+
+
+            TextInput:
+                id:name
+                multiline: False
+                background_normal:""
+                background_color:
+                    utils.get_color_from_hex('#b483c9')
+
+
+            Label:
+                text: "Пицца"
+
+            TextInput:
+                id:pizza
+                multiline: False
+                background_normal:""
+                background_color:
+                    utils.get_color_from_hex('#b483c9')
+
+            Label:
+                text: "Цвет"
+            TextInput:
+                id:color
+                multiline: False
+                background_normal:""
+                background_color:
+                    utils.get_color_from_hex('#b483c9')
+
+        Button:
+            text: "Создать"
+            font_size: 30
+            on_press: root.press()
+            background_normal:""
+            background_color:
+                utils.get_color_from_hex('#32a88d')
